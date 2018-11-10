@@ -1,12 +1,12 @@
 // the setup function runs once when you press reset or power the board
 void setup() {
-  pinMode(13, OUTPUT);
+  pinMode(13, OUTPUT); //13 numaralı pini çıkış olarak ata. (Burada Uno üzerinde dahili sarı LED var.)
 }
 
 // the loop function runs over and over again forever
 void loop() {
-  digitalWrite(13, HIGH); 
-  delay(1000);                    
-  digitalWrite(13, LOW);    
+  digitalWrite(13, HIGH); //13 Numaralı pine 5V ver.
+  delay(1000);            //1000 ms bekle.        
+  digitalWrite(13, LOW);    //13 numaralı pine 0V ver.
   delay(1000);                      
 }
