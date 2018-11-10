@@ -1,0 +1,11 @@
+// the setup routine runs once when you press reset:
+void setup() {
+  Serial.begin(9600); //Saniyede 9600 bit hızında Seri Haberleşme Protokolü başlat. (USB bu hızda haberleşir.)
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  int pot = analogRead(A0); //A0'dan okunan analog değer pot değişkenine atandı.
+  Serial.println(pot); //pot değişkenini Seri monitöre yazdır.
+  delay(1);        //okumayı kolaylaştırmak için gecikme ekle.
+}
