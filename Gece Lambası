@@ -1,0 +1,22 @@
+int ldr; //ldr isimli bir değişken oluştur.
+void setup() {
+  // put your setup code here, to run once:
+pinMode(A0,INPUT); //A0 pinini giriş olarak ata.
+pinMode(11,OUTPUT); //11. pini çıkış olarak ata.
+Serial.begin(9600); //LDR değerini görebilmemiz için Seri haberleşme başlat.
+}
+
+void loop() {
+  ldr=analogRead(A0); //A0'a bağlı LDR değerini ldr değişkenine aktar.
+  if(ldr<500){ //ldr değişkeni 500'den küçük mü diye kontrol et. Çünkü ldr'nin değeri gölge durumunda iken azalır. 
+                //500 değerini test yaparak bulduk.
+    digitalWrite(11,HIGH); //Eğer ldr<500 ise 11. pini yak.
+    }
+  else {
+    digitalWrite(11,LOW); //diğer durumlar için (yani ldr >= 500 ise) ledi söndür.
+    }
+  Serial.println(ldr); //ldr değerini görebilmemiz için Seri monitöre yazdır.
+
+  // put your main code here, to run repeatedly:
+
+}
