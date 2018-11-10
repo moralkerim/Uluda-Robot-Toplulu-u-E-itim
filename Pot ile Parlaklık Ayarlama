@@ -1,0 +1,16 @@
+// the setup routine runs once when you press reset:
+void setup() {
+  pinMode(11,OUTPUT); //11. pini çıkış olarak ata.
+  Serial.begin(9600); //9600 bit/s'de seri haberleşme başlat.
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  int pot = analogRead(A0); //A0'dan okunan değeri pot değişkenine ata.
+                            //analogRead ile okunan değer 0-1023 arasındadır (10-bit'lik ADC sebebi ile).
+  analogWrite(11,pot/4);    //pot değerini 11. pine yazdır. 
+                            //analogWrite ile sadece 0-255 arasında değer yazılabilir. Bu sebeple 0-1023 aralığında olan
+                            //pot değişkeni dörde bölünerek 0-255 aralığına çekildi.
+  Serial.println(pot);      //pot değerini görmemiz için seri ekrana yazdır.
+  delay(1);
+}
